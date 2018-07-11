@@ -13,6 +13,7 @@ libraryDependencies ++= Seq(
   "commons-io" % "commons-io" % "2.6",
   "com.iheart" %% "ficus" % "1.4.3",
   "net.codingwell" %% "scala-guice" % "4.2.0",
+  "com.google.inject.extensions" % "guice-assistedinject" % "4.2.0",
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.0",
   "com.iheart" %% "ficus" % "1.4.3",
   "ch.qos.logback" % "logback-classic" % "1.2.3",
