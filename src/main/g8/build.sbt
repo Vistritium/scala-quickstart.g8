@@ -19,6 +19,7 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.2.3",
   "net.harawata" % "appdirs" % "1.0.1",
   "org.scalaz" %% "scalaz-core" % "7.2.25",
+  "com.jsuereth" %% "scala-arm" % "2.0"
 )
 
 mainClass in (Compile, run) := Some("$package$.Main")
