@@ -5,6 +5,8 @@
         </encoder>
     </appender>
 
+    <logger name="org.reflections.Reflections" level="WARN"/>
+
     <root level="info">
         <appender-ref ref="STDOUT"/>
     </root>
