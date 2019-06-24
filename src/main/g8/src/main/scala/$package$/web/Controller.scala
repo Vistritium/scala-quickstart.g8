@@ -20,7 +20,7 @@ abstract class Controller extends LazyLogging {
     dir {
       case Failure(exception) => {
         logger.debug("futureError", exception)
-        complete(HttpResponse(status = StatusCodes.InternalServerError, entity = s"${exception.getMessage}"))
+        complete(HttpResponse(status = StatusCodes.InternalServerError, entity = s"\${exception.getMessage}"))
       }
       case Success(value) => next(value)
     }

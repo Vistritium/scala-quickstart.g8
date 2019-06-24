@@ -20,7 +20,7 @@ class ResourcesController @Inject()(
         getFromResourceDirectory("web", getClass.getClassLoader)
       } ~ get {
         pathPrefix("favicon.ico") {
-          getFromResource("web/favicon.png")
+          getFromResource("web/favicon.ico")
         }
       }
     }

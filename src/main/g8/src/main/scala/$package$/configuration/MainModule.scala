@@ -18,7 +18,7 @@ class MainModule(config: Config) extends ScalaModule with LazyLogging {
     new Reflections(getClass.getPackage.getName)
       .getTypesAnnotatedWith(classOf[Configuration])
       .forEach { c =>
-        logger.debug(s"Installing $c")
+        logger.debug(s"Installing \$c")
         install(c.newInstance().asInstanceOf[AbstractModule])
       }
 
