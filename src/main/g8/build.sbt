@@ -2,9 +2,9 @@ name := "$name$"
 
 version := "0.1"
 
-scalaVersion := "2.12.10"
+scalaVersion := "2.13.3"
 val JacksonVersion = "2.10.1"
-val AkkaVersion = "2.6.1"
+val AkkaVersion = "2.6.11"
 
 libraryDependencies ++= Seq(
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % JacksonVersion,
@@ -18,13 +18,11 @@ libraryDependencies ++= Seq(
   "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2",
   "ch.qos.logback" % "logback-classic" % "1.2.3",
   "net.harawata" % "appdirs" % "1.0.3",
-  "com.jsuereth" %% "scala-arm" % "2.0",
   "com.typesafe.akka" %% "akka-actor" % AkkaVersion,
   "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
   "com.typesafe.akka" %% "akka-slf4j" % AkkaVersion,
-  "com.typesafe.akka" %% "akka-http" % "10.1.11",
+  "com.typesafe.akka" %% "akka-http" % "10.2.2",
   "org.reflections" % "reflections" % "0.9.11",
-  "org.typelevel" %% "cats" % "0.9.0",
 )
 
 enablePlugins(SbtTwirl)
