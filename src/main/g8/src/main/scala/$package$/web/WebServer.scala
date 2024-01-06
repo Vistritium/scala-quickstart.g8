@@ -4,7 +4,6 @@ import java.lang.reflect.Modifier
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
-import akka.stream.ActorMaterializer
 import com.google.inject.{Inject, Injector, Singleton}
 import com.typesafe.config.Config
 import com.typesafe.scalalogging.LazyLogging
@@ -18,13 +17,14 @@ import scala.concurrent.ExecutionContext
 
 @Singleton
 class WebServer @Inject()(
-  implicit val executionContext: ExecutionContext,
-  implicit val actorSystem: ActorSystem,
+  executionContext: ExecutionContext,
+  actorSystem: ActorSystem,
   config: Config,
   injector: Injector
 ) extends LazyLogging {
 
-  private implicit val materializer: ActorMaterializer = ActorMaterializer()(actorSystem)
+  private implicit val implicitEc: ExecutionContext = executionContext
+  private implicit val implicitAs: ActorSystem = actorSystem
 
   private val controllers: List[Controller] = {
     val reflections = new Reflections(new ConfigurationBuilder()
@@ -32,7 +32,7 @@ class WebServer @Inject()(
       .setScanners(new SubTypesScanner(), new TypeAnnotationsScanner))
     val set = reflections.getTypesAnnotatedWith(classOf[DiscoverableController]).asScala
       .filterNot(c => Modifier.isAbstract(c.getModifiers))
-    logger.info(s"Found following controllers: \${set.mkString("\n", "\n", "")}")
+    logger.info(s"Found following controllers: ${set.mkString("\n", "\n", "")}")
     set.map(c => injector.getInstance(c).asInstanceOf[Controller]).toList
   }
 
@@ -42,6 +42,6 @@ class WebServer @Inject()(
   private val bindingFuture: Unit = {
     val port: Int = config.getInt("web.port")
     Http().bindAndHandle(route, "0.0.0.0", port)
-    logger.info(s"Server started on port \$port")
+    logger.info(s"Server started on port $port")
   }
 }
