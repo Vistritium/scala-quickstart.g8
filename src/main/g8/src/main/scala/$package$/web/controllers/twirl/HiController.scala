@@ -1,7 +1,7 @@
 package $package$.web.controllers.twirl
 
-import akka.http.scaladsl.server.Directives._
-import akka.http.scaladsl.server.Route
+import org.apache.pekko.http.scaladsl.server.Directives._
+import org.apache.pekko.http.scaladsl.server.Route
 import com.google.inject.{Inject, Singleton}
 import $package$.web.{DiscoverableController, TwirlController}
 

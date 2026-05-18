@@ -1,8 +1,8 @@
 package $package$.web
 
-import akka.http.scaladsl.marshalling.{Marshaller, ToEntityMarshaller}
-import akka.http.scaladsl.model.MediaType
-import akka.http.scaladsl.model.MediaTypes.{`text/html`, `text/plain`, `text/xml`}
+import org.apache.pekko.http.scaladsl.marshalling.{Marshaller, ToEntityMarshaller}
+import org.apache.pekko.http.scaladsl.model.MediaType
+import org.apache.pekko.http.scaladsl.model.MediaTypes.{`text/html`, `text/plain`, `text/xml`}
 import play.twirl.api.{Html, Txt, Xml}
 
 abstract class TwirlController extends Controller {

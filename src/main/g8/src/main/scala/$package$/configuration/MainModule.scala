@@ -1,6 +1,6 @@
 package $package$.configuration
 
-import akka.actor.ActorSystem
+import org.apache.pekko.actor.ActorSystem
 import com.fasterxml.jackson.databind.{DeserializationFeature, ObjectMapper, SerializationFeature}
 import com.fasterxml.jackson.module.scala.DefaultScalaModule
 import com.google.inject.{AbstractModule, Provides, Singleton}
