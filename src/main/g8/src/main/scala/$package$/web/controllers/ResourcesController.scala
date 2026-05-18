@@ -1,12 +1,12 @@
 package $package$.web.controllers
 
-import akka.http.scaladsl.server.Route
+import org.apache.pekko.http.scaladsl.server.Route
 import com.google.inject.{Inject, Singleton}
 import $package$.web.{Controller, DiscoverableController}
 import com.typesafe.scalalogging.LazyLogging
-import akka.http.scaladsl.model.headers._
-import akka.http.scaladsl.model.headers.CacheDirectives._
-import akka.http.scaladsl.server.Directives._
+import org.apache.pekko.http.scaladsl.model.headers._
+import org.apache.pekko.http.scaladsl.model.headers.CacheDirectives._
+import org.apache.pekko.http.scaladsl.server.Directives._
 
 import scala.concurrent.duration._
 

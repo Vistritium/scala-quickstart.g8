@@ -1,9 +1,9 @@
 package $package$.web
 
-import akka.http.scaladsl.model.{HttpResponse, StatusCodes}
-import akka.http.scaladsl.server.Directives._
-import akka.http.scaladsl.server.{Directive1, Route}
-import akka.util.Timeout
+import org.apache.pekko.http.scaladsl.model.{HttpResponse, StatusCodes}
+import org.apache.pekko.http.scaladsl.server.Directives._
+import org.apache.pekko.http.scaladsl.server.{Directive1, Route}
+import org.apache.pekko.util.Timeout
 import com.typesafe.scalalogging.LazyLogging
 
 import scala.concurrent.duration._
